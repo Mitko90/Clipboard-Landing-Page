@@ -1,0 +1,404 @@
+:root {
+  --ff-ptimary: "Bai Jamjuree", sans-serif;
+  --fw-bold: 600;
+  --fs-primary: 1.125rem;
+  --fs-100: 1.23rem;
+  --fs-150: 1.4rem;
+  --fs-200: 1.5rem;
+  --fs-300: 1.75rem;
+  --fs-400: 2rem;
+  --fs-500: 2.6rem;
+
+  --container-max-width: 69.375rem;
+  --container-margin-inline: auto;
+
+  --clr-primary-200: hsl(171, 66%, 44%); /*iOS*/
+  --clr-primary-300: hsl(233, 100%, 69%); /*Mac*/
+
+  --clr-neutral-100: hsl(220, 18%, 97%); /*footer bg*/
+  --clr-neutral-200: hsl(210, 11%, 66%); /*body*/
+  --clr-neutral-300: hsl(210, 10%, 33%); /*headings*/
+}
+
+/* CSS Resets */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+/* End of Reset */
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+body {
+  font-family: var(--ff-ptimary);
+  font-size: var(--fs-primary);
+  text-align: center;
+  color: var(--clr-neutral-200);
+  background-image: url(images/bg-header-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Repeating styles */
+h1,
+h2,
+h3 {
+  color: var(--clr-neutral-300);
+  line-height: 1.3;
+}
+header,
+section {
+  padding: 0 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.header-logo {
+  display: inline;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin-inline: var(--container-margin-inline);
+}
+
+.section-p {
+  margin-block: 1rem;
+}
+
+.btn-box {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.btn {
+  background-color: var(--btn-bg);
+  color: white;
+
+  padding: 1rem 2.125rem;
+  border-radius: 99vw;
+}
+
+.btn-ios {
+  --btn-bg: var(--clr-primary-200);
+}
+
+.btn-mac {
+  --btn-bg: var(--clr-primary-300);
+}
+
+.even-columns {
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: var(--gap);
+}
+
+/* End of repeating styles */
+
+/* Layout */
+
+/* header */
+
+header {
+  padding-top: 7.5rem;
+}
+
+h1 {
+  margin-top: 4rem;
+  line-height: 1.2;
+  font-size: var(--fs-400);
+}
+
+/* section one */
+
+.snippets {
+  margin-top: 9.5rem;
+}
+
+.snippets .list-heading {
+  font-size: var(--fs-200);
+  margin-bottom: 1rem;
+}
+
+.snippets .list-heading:nth-of-type(1) {
+  margin-top: 4rem;
+}
+
+/* Section three */
+
+.supercharge {
+  --gap: 1.75rem;
+}
+
+.supercharge .even-columns div {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+/* section four */
+
+.logos {
+  --gap: 3rem;
+  margin-top: 2rem;
+  place-items: center;
+}
+
+/* footer */
+
+footer {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-300);
+  padding-block: 4rem;
+  margin-top: 4rem;
+}
+
+.footer-logo {
+  margin-inline: auto;
+  margin-bottom: 4rem;
+}
+
+.footer-nav {
+  display: grid;
+  gap: 2rem;
+}
+
+.social-list {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+/* Desktop */
+@media (min-width: 50em) {
+  h1 {
+    font-size: var(--fs-500);
+    margin-top: 2.5rem;
+  }
+
+  h2.section-heading {
+    font-size: var(--fs-400);
+  }
+
+  .even-columns {
+    grid-auto-flow: column;
+  }
+
+  .section-p {
+    max-width: 57ch;
+    margin-inline: auto;
+  }
+
+  .btn-box {
+    grid-auto-flow: column;
+    max-width: max-content;
+    margin-inline: auto;
+    margin-top: 2.25rem;
+  }
+
+  .btn {
+    max-width: max-content;
+  }
+
+  /* Section Two */
+
+  .snippets {
+    --gap: 6.2rem;
+    margin-top: 8.5rem;
+    align-items: start;
+  }
+
+  .snippets .section-p {
+    max-width: 60ch;
+  }
+
+  .snippets .even-columns {
+    margin-left: -11.5rem;
+    margin-top: 4.125rem;
+
+    grid-template-columns: 710px 1fr;
+  }
+
+  .snippets-list {
+    text-align: left;
+    font-size: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    justify-content: center;
+    margin-top: -2rem;
+  }
+  .snippets .list-heading {
+    font-size: var(--fs-150);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .snippets .list-heading:nth-of-type(1) {
+    margin: 0;
+  }
+
+  .snippets li .section-p {
+    max-width: 34ch;
+    margin: 0;
+  }
+
+  /* section three */
+
+  .access {
+    margin-top: 9rem;
+  }
+
+  .access .section-p {
+    max-width: 60ch;
+    line-height: 1.5;
+  }
+
+  .access img {
+    margin-inline: auto;
+    margin-top: 6rem;
+    max-width: 53rem;
+  }
+
+  /* section four */
+
+  .supercharge {
+    --gap: 0;
+    margin-top: 4rem;
+  }
+
+  .supercharge .even-columns {
+    margin-top: 4rem;
+    column-gap: 2rem;
+  }
+
+  .supercharge .even-columns div {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: flex-start;
+    /* max-width: 21rem; */
+  }
+
+  .list-heading {
+    margin-top: 2rem;
+  }
+
+  .list-p {
+    font-size: 15px;
+  }
+
+  /* Section Five */
+
+  .logos {
+    --gap: 4rem;
+    margin-top: 9.5rem;
+  }
+
+  /* Section Six */
+
+  .ios-and-macos {
+    margin-top: 9.2rem;
+  }
+
+  .ios-and-macos .section-p {
+    max-width: 58ch;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 8.5rem;
+    padding-top: 2.3rem;
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+    padding-inline: 2rem;
+    /* justify-content: space-between; */
+  }
+  .footer-logo {
+    margin: 0;
+    max-width: 3.5rem;
+  }
+
+  .footer-nav {
+    display: block;
+    columns: 3;
+    gap: 4rem;
+    text-align: left;
+    margin-left: 7.7rem;
+  }
+
+  .social-list {
+    margin-top: 0;
+    margin-left: auto;
+    gap: 1.5rem;
+  }
+}
